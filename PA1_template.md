@@ -25,25 +25,50 @@ Below is the histogram for sum of steps by Date
 Mean - total number of steps taken per day : 
 
 ```r
-mean(q1HistoData$x)
+paste('Mean - total number of steps taken per day : ', mean(q1HistoData$x))
 ```
 
 ```
-## [1] 10766.19
+## [1] "Mean - total number of steps taken per day :  10766.1886792453"
 ```
 
 Median - total number of steps taken per day: 
 
 ```r
-median(q1HistoData$x)
+paste('Median - total number of steps taken per day : ', median(q1HistoData$x))
 ```
 
 ```
-## [1] 10765
+## [1] "Median - total number of steps taken per day :  10765"
 ```
 
 
 ## What is the average daily activity pattern?
+
+![](PA1_template_files/figure-html/unnamed-chunk-5-1.png) 
+
+Below is the calculation that work out the 5-minute interval that, on average, contains the maximum number of steps:
+
+In 5-minute interval
+
+```r
+paste('Maximum steps interval = ', Q2Data[Q2Data$x == max(Q2Data$x), "Interval"])
+```
+
+```
+## [1] "Maximum steps interval =  835"
+```
+
+In equivalent time in the day:
+
+```r
+maxMinuteInt <- Q2Data[Q2Data$x == max(Q2Data$x), "Interval"]
+paste('Maximum stpes interval in Time = ', maxMinuteInt %/% 60, ':' , maxMinuteInt %% 60)
+```
+
+```
+## [1] "Maximum stpes interval in Time =  13 : 55"
+```
 
 
 
